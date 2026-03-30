@@ -421,7 +421,7 @@ def get_price_jobs_up_to_date(
         else:
             latest_price_date = result[0]
             date_first = latest_price_date + datetime.timedelta(days=1)
-            if date_first < date_last:
+            if date_first <= date_last:
                 lifetimes_map[base_quote] = lifetimes.trim_intervals(
                     intervals, date_first, date_last
                 )
